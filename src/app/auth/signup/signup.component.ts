@@ -11,7 +11,7 @@ export class SignupComponent implements OnInit {
 
   constructor() { };
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.maxDate = new Date();
     this.maxDate.setFullYear(this.maxDate.getFullYear() - 18);
   };
