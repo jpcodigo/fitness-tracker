@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { emit } from 'process';
 
 @Component({
   selector: 'app-sidenav-list',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sidenav-list.component.css']
 })
 export class SidenavListComponent implements OnInit {
+  @Output() closer = new EventEmitter<void>();
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  closeSidenav() {
+    this.closer.emit();
   }
 
 }
