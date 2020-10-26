@@ -1,1 +1,14 @@
-<p>past-training-sessions works!</p>
+<mat-table [datasource]="datasource">
+    <ng-container matColumnDef="date">
+        <mat-header-cell *matHeaderCellDeff>Date</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{ element.date | date }}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDeff>Name</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{ element.name | name }}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="date">
+        <mat-header-cell *matHeaderCellDeff>Date</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{ element.d | date }}</mat-cell>
+    </ng-container>
+</mat-table>
