@@ -30,7 +30,7 @@ export class TrainingService {
                 });
             }))
             .subscribe((exercises: Exercise[]) => {
-                this.uiService.loadingStateChanged.next(true);
+                this.uiService.loadingStateChanged.next(false);
                 this.availableExercises = exercises;
                 this.exercisesChanged.next([...this.availableExercises]);
             }));
