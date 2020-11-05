@@ -5,7 +5,11 @@ import { WelcomeComponent } from './welcome/welcome.component';
 
 const routes: Routes = [
     { path: '', component: WelcomeComponent },
-    { path: 'training', loadChildren: () => import('./training/training.module').then(m => m.TrainingModule), canLoad: [AuthGuard] }
+    {
+        path: 'training',
+        loadChildren: () => import('./training/training.module').then(m => m.TrainingModule),
+        canLoad: [AuthGuard]
+    }
 ];
 
 @NgModule({

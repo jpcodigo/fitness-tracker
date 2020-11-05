@@ -1,5 +1,3 @@
-import { stat } from 'fs';
-
 export interface State {
     isLoading: boolean;
 }
