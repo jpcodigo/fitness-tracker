@@ -38,18 +38,21 @@ export class AuthService {
     }
 
     registerUser(authData: AuthData) {
-        // this.uiService.loadingStateChanged.next(true);
         this.store.dispatch(new UI.StartLoading());
+        // this.uiService.loadingStateChanged.next(true);
+        
         this.auth.createUserWithEmailAndPassword(
             authData.email,
             authData.password
         ).then(result => {
-           //  this.uiService.loadingStateChanged.next(false);
            this.store.dispatch(new UI.StopLoading());
+            //  this.uiService.loadingStateChanged.next(false);
+           
         })
         .catch(error => {
-            // this.uiService.loadingStateChanged.next(false);
             this.store.dispatch(new UI.StopLoading());
+            // this.uiService.loadingStateChanged.next(false);
+            
             this.uiService.showSnackbar(error.message, null, 3000);
         });
     }
@@ -62,12 +65,14 @@ export class AuthService {
             authData.password
         )
         .then(result => {
-            //this.uiService.loadingStateChanged.next(false);
             this.store.dispatch(new UI.StopLoading());
+            //this.uiService.loadingStateChanged.next(false);
+            
         })
         .catch(error => {
-            //this.uiService.loadingStateChanged.next(false);
             this.store.dispatch(new UI.StopLoading());
+            //this.uiService.loadingStateChanged.next(false);
+            
             this.uiService.showSnackbar(error.message, null, 3000);
         }); 
     }
