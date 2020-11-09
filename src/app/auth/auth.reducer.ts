@@ -1,4 +1,8 @@
-import { AuthActions, SET_AUTHENTICATED, SET_UNAUTHENTICATED } from './auth.actions';
+import {
+    AuthActions,
+    SET_AUTHENTICATED,
+    SET_UNAUTHENTICATED
+} from './auth.actions';
 
 export interface State {
     isAuthenticated: boolean;

@@ -26,7 +26,9 @@ export class LoginComponent implements OnInit {
     }); */
     // Reactive form approach
     this.loginForm = new FormGroup({
-      email: new FormControl('', { validators: [Validators.required, Validators.email] }),
+      email: new FormControl('', {
+        validators: [Validators.required, Validators.email]
+      }),
       password: new FormControl('', { validators: [Validators.required] })
     });
   };

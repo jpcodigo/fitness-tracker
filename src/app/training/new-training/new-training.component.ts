@@ -3,8 +3,8 @@ import { NgForm } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { TrainingService } from '../training.service';
 import { Exercise } from '../exercise.model';
-import { UIService } from 'src/app/shared/ui.service';
 import * as fromRoot from '../../app.reducer';
+import * as fromTraining from '../training.reducer';
 import { Store } from '@ngrx/store';
 
 
@@ -14,16 +14,17 @@ import { Store } from '@ngrx/store';
   styleUrls: ['./new-training.component.css']
 })
 export class NewTrainingComponent implements OnInit {
-  exercises: Observable<Exercise[]>;
+  exercises$: Observable<Exercise[]>;
   isLoading$: Observable<boolean>;
 
   constructor(
     private trainingService: TrainingService,
-    private store: Store<fromRoot.State>
+    private store: Store<fromTraining.State>
   ) {}
 
   ngOnInit(): void {
     this.isLoading$ = this.store.select(fromRoot.getIsLoading);
+    this.exercises$ = this.store.select(fromTraining.getAvailableExercises);
     /* this.loadingSubscription = this.uiService.loadingStateChanged.subscribe(isLoading => {
         this.isLoading = isLoading;
       }
