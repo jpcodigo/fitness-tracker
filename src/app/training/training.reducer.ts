@@ -13,7 +13,7 @@ import { createFeatureSelector, createSelector } from '@ngrx/store';
 export interface TrainingState {
     availableExercises: Exercise[];
     finishedExercises: Exercise[];
-    activeTraining: Exercise[];
+    activeTraining: Exercise;
 }
 
 export interface State extends fromRoot.State {
