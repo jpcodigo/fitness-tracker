@@ -8,7 +8,7 @@ import {
 } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { take } from 'rxjs/operators';
-import * as fromRoot from './auth.reducer';
+import * as fromRoot from '../app.reducer';
 
 @Injectable()
 export class AuthGuard implements CanActivate, CanLoad {
