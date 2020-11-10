@@ -39,7 +39,11 @@ import { reducers } from './app.reducer';
     AngularFirestoreModule,
     StoreModule.forRoot(reducers)
   ],
-  providers: [AuthService, TrainingService, UIService],
+  providers: [
+    AuthService,
+    TrainingService,
+    UIService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

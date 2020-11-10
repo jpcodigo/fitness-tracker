@@ -14,7 +14,6 @@ export class TrainingService {
     exerciseChanged = new Subject<Exercise>();
     exercisesChanged = new Subject<Exercise[]>();
     finishedExercisesChanged = new Subject<Exercise[]>();
-    private availableExercises: Exercise[] = [];
     private runningExercise: Exercise;
     private fbSubs: Subscription[] = [];
 

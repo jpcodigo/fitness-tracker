@@ -48,6 +48,9 @@ export function trainingReducer(state = initialState, action: TrainingActions) {
                 ...state,
                 activeTraining: null
             };
+        default: {
+            return state;
+        }
     }
 }
 
